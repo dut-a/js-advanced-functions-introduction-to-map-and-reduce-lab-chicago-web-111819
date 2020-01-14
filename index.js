@@ -10,9 +10,7 @@ function mapToNegativize(sourceArray) {
 
 function mapToNoChange(sourceArray) {
   let newArray = [];
-  sourceArray.forEach(element => {
-    newArray.push(element);
-  });
+  sourceArray.forEach(element => newArray.push(element));
   return newArray;
 }
 
@@ -34,24 +32,23 @@ function mapToSquare(sourceArray) {
 
 /** reduce-like */
 function reduceToTotal(sourceArray, startingPoint) {
+  // default to 'zero' if no starting value given.
   let total = startingPoint || 0;
-  sourceArray.forEach(num => {
-    total += num;
-  });
+  sourceArray.forEach(num => total += num);
   return total;
 }
 
 function reduceToAllTrue(sourceArray) {
   for (let i = 0; i < sourceArray.length; i++) {
     if (!sourceArray[i]) { return false; }
-  };
+  }
   return true;
 }
 
 function reduceToAnyTrue(sourceArray) {
   for (let i = 0; i < sourceArray.length; i++) {
     if (sourceArray[i]) { return true; }
-  };
+  }
   return false;
 }
 
